@@ -5,7 +5,7 @@
 // 3. Numbers showing how many bombs are 1 square away from each square.
 // Leaves blank the squares with 0 bombs 1 square away.
 
-console.log("Make a Minesweeper game board.")
+console.log("Make a Minesweeper game board.");
 
 var prompt = require('prompt');
 prompt.message = "# of";
@@ -16,7 +16,6 @@ prompt.get(['Rows', 'Cols'], function (err, result) {
   if (err) { return onErr(err); }
   var rows = parseInt(result.Rows);
   var cols = parseInt(result.Cols);
-
   console.log(makeBoard(rows, cols));
 });
 
@@ -66,3 +65,21 @@ function putInNumbers(board, cols, rows) {
     }
   }
 }
+
+/* OUTPUT
+
+Make a Minesweeper game board.
+# of Rows  10
+# of Cols  10
+[ [ '1', '2', 'B', '2', '2', '3', 'B', '2', '1', '1' ],
+  [ 'B', '2', '1', '2', 'B', 'B', '4', '4', 'B', '3' ],
+  [ '1', '1', '_', '1', '4', 'B', 'B', '3', 'B', 'B' ],
+  [ '1', '2', '1', '1', '2', 'B', '4', '3', '3', '2' ],
+  [ 'B', '3', 'B', '1', '1', '1', '3', 'B', '3', '1' ],
+  [ 'B', '4', '2', '1', '_', '_', '2', 'B', 'B', '1' ],
+  [ '3', 'B', '2', '_', '_', '_', '1', '2', '2', '1' ],
+  [ '3', 'B', '3', '1', '_', '1', '1', '2', '2', '2' ],
+  [ 'B', '4', 'B', '1', '_', '1', 'B', '4', 'B', 'B' ],
+  [ '2', 'B', '2', '1', '_', '1', '2', 'B', 'B', '3' ] ]
+
+*/
